@@ -1,0 +1,3 @@
+# Excelrator
+Excelrator is a web app used to simulate tables and print it in CSV file
+
