@@ -30,3 +30,5 @@ function idSetter(lengthOfColumn,startingID){
 function rangeCreator(min,max){
     return Math.random() * (max-min + 1 ) + min 
 }
+
+
