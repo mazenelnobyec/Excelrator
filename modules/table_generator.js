@@ -1,4 +1,4 @@
-class Table{
+export class Table{
     constructor(rows , columns , startingID){
         this.rows = rows;
         this.columns = columns;
