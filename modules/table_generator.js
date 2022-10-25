@@ -6,13 +6,14 @@ export class Table{
     }
 
 
-    idSetter(lengthOfRows,startingID){
+    idSetter(){
         const arrayOfLines=[]
-        for (let index = 0; index < lengthOfRows; index++) {
-            arrayOfLines.push({"ID":startingID});
-            startingID += 1;
+        for (let index = 0; index < this.rows; index++) {
+            arrayOfLines.push({"ID":this.startingID});
+            this.startingID += 1;
             
         }
+        console.log(arrayOfLines)
         return arrayOfLines;
     }
 }
