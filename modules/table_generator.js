@@ -1,31 +1,28 @@
-let tableParamters = {
-    rows:null,
-    columns:null,
-    startingID:null
-}
-
-export function tablePrams(params) {
-    tableParamters={rows:params.rows,
-                    columns:params.columns,
-                    startingID:params.startingID}
-}
-
-export function testTable(){
-    console.log(`${tableParamters.rows}   ${tableParamters.columns}`)
-    console.log(idSetter(tableParamters.columns,tableParamters.startingID))
-}
-
-
-function idSetter(lengthOfColumn,startingID){
-    const arrayOfLines=[]
-    for (let index = 0; index < lengthOfColumn; index++) {
-        arrayOfLines.push({"ID":startingID,
-                          "Length":rangeCreator(100,250)});
-        startingID += 1;
-        
+class Table{
+    constructor(rows , columns , startingID){
+        this.rows = rows;
+        this.columns = columns;
+        this.startingID = startingID;
     }
-    return arrayOfLines;
+
+
+    idSetter(lengthOfRows,startingID){
+        const arrayOfLines=[]
+        for (let index = 0; index < lengthOfRows; index++) {
+            arrayOfLines.push({"ID":startingID});
+            startingID += 1;
+            
+        }
+        return arrayOfLines;
+    }
 }
+
+
+
+
+
+
+
 
 function rangeCreator(min,max){
     return Math.random() * (max-min + 1 ) + min 
