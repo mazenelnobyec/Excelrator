@@ -9,12 +9,16 @@ export class Table{
     idSetter(){
         const arrayOfLines=[]
         for (let index = 0; index < this.rows; index++) {
-            arrayOfLines.push({"ID":this.startingID});
+            arrayOfLines.push({"Index":index,"ID":this.startingID});
             this.startingID += 1;
             
         }
-        console.log(arrayOfLines)
         return arrayOfLines;
+    }
+
+    printTable(){
+        const dataHolder = this.idSetter()
+        console.log(dataHolder)
     }
 }
 
