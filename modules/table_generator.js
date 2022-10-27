@@ -30,19 +30,6 @@ export class ClothTable extends Table{
         
     }
 }
-/*
-    ToDO 
-    1-Extend Cloth table
-    2-Change rows setting to default
-*/ 
-
-
-
-
-
-
-
-
 
 function rangeCreator(min,max){
     return Math.random() * (max-min + 1 ) + min 
