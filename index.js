@@ -1,8 +1,8 @@
-import { Table } from "./modules/table_generator.js";
+import { ClothTable } from "./modules/table_generator.js";
 
-let testingTable  = {rows:50, columns:5, startingID:52134};
+let testingTable  = {rows:50, columns:['length','width','weight'], startingID:52134};
 
-const table = new Table(testingTable.rows,testingTable.columns,testingTable.startingID)
+const table = new ClothTable(testingTable.rows,testingTable.startingID,50,45)
 
 table.idSetter()
 table.printTable()
