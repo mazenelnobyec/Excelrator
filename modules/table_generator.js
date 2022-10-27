@@ -1,5 +1,5 @@
-export class Table{
-    constructor(rows , columns , startingID){
+ class Table{
+    constructor(rows ,  startingID, columns){
         this.rows = rows;
         this.columns = columns;
         this.startingID = startingID;
@@ -21,6 +21,21 @@ export class Table{
         console.log(dataHolder)
     }
 }
+
+export class ClothTable extends Table{
+    constructor(rows,startingID,length,width){
+        super(rows,startingID);
+        this.length=length;
+        this.width = width;
+        
+    }
+}
+/*
+    ToDO 
+    1-Extend Cloth table
+    2-Change rows setting to default
+*/ 
+
 
 
 
