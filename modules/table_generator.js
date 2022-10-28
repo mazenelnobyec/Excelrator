@@ -3,31 +3,43 @@
         this.rows = rows;
         this.columns = columns;
         this.startingID = startingID;
+        this.tableObj = {}
     }
 
 
     idSetter(){
         const arrayOfLines=[]
         for (let index = 0; index < this.rows; index++) {
-            arrayOfLines.push({"Index":index,"ID":this.startingID});
+            arrayOfLines.push({"ID":this.startingID});
             this.startingID += 1;
             
         }
-        return arrayOfLines;
+        this.tableObj = {"ID":arrayOfLines};
     }
 
-    printTable(){
-        const dataHolder = this.idSetter()
-        console.log(dataHolder)
-    }
+    
 }
 
 export class ClothTable extends Table{
-    constructor(rows,startingID,length,width){
+    constructor(rows,startingID,minLength,maxLength,width){
         super(rows,startingID);
-        this.length=length;
+        this.minLength=minLength;
+        this.maxLength=maxLength;
         this.width = width;
-        
+    }
+
+     lengthSetter(){
+        let arr=[]
+        for (let index = 0; index < this.tableObj["ID"].length; index++) {
+            arr.push(rangeCreator(this.minLength,this.maxLength));   
+            
+        }
+        this.tableObj.length=arr
+    }
+    printTable(){
+        this.idSetter()
+        this.lengthSetter()
+        console.log(this.tableObj)
     }
 }
 
