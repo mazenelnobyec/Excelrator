@@ -10,6 +10,6 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "csv": "^6.2.1"
+    "json2csv": "^5.0.7"
   }
 }
