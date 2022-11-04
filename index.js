@@ -1,4 +1,4 @@
-import { ClothTable } from "./modules/table_generator.js";
+import { ClothTable } from "./table_generator.js";
 
 let testingTable  = {rows:50, columns:['length','width','weight'], startingID:52134};
 
