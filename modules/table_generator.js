@@ -1,4 +1,18 @@
- class Table{
+
+const meterics ={Inches:39.37, 	
+              Feet:3.281,
+              Yards:1.094} 	
+
+
+function conversion(given,wanted_length){
+    return given * meterics.wanted_length;
+}
+
+function rangeCreator(min,max){
+    return Math.random() * (max-min + 1 ) + min 
+}
+
+class Table{
     constructor(rows ,  startingID, columns){
         this.rows = rows;
         this.columns = columns;
@@ -42,9 +56,4 @@ export class ClothTable extends Table{
         console.log(this.tableObj)
     }
 }
-
-function rangeCreator(min,max){
-    return Math.random() * (max-min + 1 ) + min 
-}
-
 
