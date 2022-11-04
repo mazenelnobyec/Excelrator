@@ -17,21 +17,32 @@ class Table{
         this.rows = rows;
         this.columns = columns;
         this.startingID = startingID;
-        this.tableObj = {}
+        this.tableArray = []
     }
 
+    getFields(){
+        return Object.getOwnPropertyNames(this.tableArray[0])
+    }
 
     idSetter(){
-        const arrayOfLines=[]
         for (let index = 0; index < this.rows; index++) {
-            arrayOfLines.push({"ID":this.startingID});
+            this.tableArray.push({"ID":this.startingID});
             this.startingID += 1;
             
         }
-        this.tableObj = {"ID":arrayOfLines};
+        
     }
-
     
+    rowNumberSetter(){
+        for (let index = 0; index < this.tableArray.length; index++) {
+            this.tableArray[index]["No"]=index+1;   
+            
+        }
+    }
+    
+    getData(){
+        return this.tableArray;
+    }
 }
 
 export class ClothTable extends Table{
@@ -43,17 +54,19 @@ export class ClothTable extends Table{
     }
 
      lengthSetter(){
-        let arr=[]
-        for (let index = 0; index < this.tableObj["ID"].length; index++) {
-            arr.push(rangeCreator(this.minLength,this.maxLength));   
+        
+        for (let index = 0; index < this.tableArray.length; index++) {
+            this.tableArray[index]["length"]=rangeCreator(this.minLength,this.maxLength);   
             
         }
-        this.tableObj.length=arr
+        // this.tableObj.length=arr
     }
+
     printTable(){
         this.idSetter()
         this.lengthSetter()
-        console.log(this.tableObj)
+        this.rowNumberSetter()
+        console.log(this.tableArray)
     }
 }
 
